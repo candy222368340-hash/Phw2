@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台語家教翻教學新篇章：盼補足本土語政策缺口 | 互動融媒體專題</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <span class="badge">政大大學報 ✕ 融媒體深談</span>
+            <h1>最熟悉的陌生人：<br><span class="highlight">台語家教</span>翻轉教學新篇章</h1>
+            <p class="subtitle">當學校每週一堂課無法挽救世代斷層，民間陣營如何靠「家教模式」為母語扎根？</p>
+            <div class="scroll-indicator">向下滑動探尋真相 ➔</div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="section-block" id="data-story">
+            <div class="section-title">
+                <h2>核心危機：懸崖式的世代斷層</h2>
+                <p>根據 109 年行政院人口及住宅普查，台語正遭遇嚴重的「世代斷裂」危機。點選下方按鈕，看看不同年齡層將台語作為「主要語言」的驚人落差。</p>
+            </div>
+            
+            <div class="data-interactive-container">
+                <div class="chart-controls">
+                    <button class="btn active" onclick="updateChart('all')">全台普查概況</button>
+                    <button class="btn" onclick="updateChart('young')">6-14 歲族群</button>
+                    <button class="btn" onclick="updateChart('elder')">65 歲以上長者</button>
+                </div>
+                
+                <div class="visualization-wrapper">
+                    <svg id="interactive-chart" viewBox="0 0 600 300">
+                        <line x1="50" y1="50" x2="550" y2="50" stroke="#e0e0e0" stroke-dasharray="4"/>
+                        <line x1="50" y1="150" x2="550" y2="150" stroke="#e0e0e0" stroke-dasharray="4"/>
+                        <line x1="50" y1="250" x2="550" y2="250" stroke="#999" />
+                        
+                        <rect id="bar-main" x="120" y="50" width="80" height="200" fill="#2d6a4f" rx="5"/>
+                        <rect id="bar-sub" x="320" y="50" width="80" height="200" fill="#52b788" rx="5"/>
+                        
+                        <text id="val-main" x="160" y="40" text-anchor="middle" class="chart-value">31.7%</text>
+                        <text id="val-sub" x="360" y="40" text-anchor="middle" class="chart-value">54.3%</text>
+                        
+                        <text id="label-main" x="160" y="275" text-anchor="middle" class="chart-label">主要使用</text>
+                        <text id="label-sub" x="360" y="275" text-anchor="middle" class="chart-label">次要使用</text>
+                    </svg>
+                </div>
+                <div class="chart-explanation" id="chart-desc">
+                    <strong>全台普查概況：</strong>全台僅有 31.7% 的民眾將台語作為主要使用語言，這代表即便台語是「最強勢的弱勢語言」，其日常根基也已大幅動搖。
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block bg-light" id="persona-simulator">
+            <div class="section-title">
+                <h2>三大主力客群：誰在聘請台語家教？</h2>
+                <p>目前的台語家教市場並非單純為了日常交流，而是分化為三大具體訴求。點擊切換角色，體驗他們的學習動機與教學現場的隱憂。</p>
+            </div>
+
+            <div class="simulator-wrapper">
+                <div class="tabs-nav">
+                    <div class="tab-item active" onclick="switchPersona(0)">
+                        <span class="icon">🏆</span>
+                        <div>
+                            <h4>語文競賽指導</h4>
+                            <small>市場佔比 > 50%</small>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchPersona(1)">
+                        <span class="icon">💼</span>
+                        <div>
+                            <h4>專業證照考照</h4>
+                            <small>成人的職場加值</small>
+                        </div>
+                    </div>
+                    <div class="tab-item" onclick="switchPersona(2)">
+                        <span class="icon">❤️</span>
+                        <div>
+                            <h4>語言文化傳承</h4>
+                            <small>追尋阿嬤的連結</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="persona-content" id="persona-display">
+                    <h3>載入中...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block" id="accent-lab">
+            <div class="section-title">
+                <h2>腔調實驗室：多元性 vs. 推廣標準的兩難</h2>
+                <p>「語言沒有唯一的標準答案，但要有標準才能推廣。」試著點擊下方詞彙，觀察不同腔調（khiunn‑kháu）的發音與書寫差異，體會教學者的必要之惡。</p>
+            </div>
+
+            <div class="lab-container">
+                <div class="phrase-selector">
+                    <button class="phrase-btn active" onclick="switchPhrase('spoon')">湯匙</button>
+                    <button class="phrase-btn" onclick="switchPhrase('soap')">肥皂</button>
+                    <button class="phrase-btn" onclick="switchPhrase('egg')">雞蛋</button>
+                </div>
+
+                <div class="lab-display">
+                    <div class="accent-card">
+                        <h3>教育部標準系統 (臺灣閩南語常用詞辭典)</h3>
+                        <p class="romanization" id="std-roman">thîng-sî / thûi-á</p>
+                        <p class="note">教學體制與檢定最普遍採用的基準線。</p>
+                    </div>
+                    
+                    <div class="accent-card highlight-card">
+                        <h3>特殊地域腔口模擬（如：澎湖腔/地方腔）</h3>
+                        <p class="romanization" id="var-roman">thûi-á (特有腔調走音表現)</p>
+                        <p class="note">在語文競賽中，保有獨特腔調常能名列前茅，因為評審不希望這些聲音「被消失」。</p>
+                    </div>
+                </div>
+                
+                <div class="interactive-player">
+                    <button class="play-btn" onclick="simulateAudio()">🔊 模擬腔調發音對比</button>
+                    <span id="player-status">點擊按鈕，模擬老師現場示範不同腔調的教學環境。</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block bg-dark text-white" id="policy-lab">
+            <div class="section-title">
+                <h2>未來解方：如何讓台語扎根日常？</h2>
+                <p>專家指出，目前的台語學習常面臨「本末倒置」的窘境。點選你認為最有效的推動政策，檢視它能補足哪個層面的政策缺口：</p>
+            </div>
+
+            <div class="policy-container">
+                <div class="policy-options">
+                    <div class="policy-card" onclick="togglePolicy(this, 'system')">
+                        <h4>A. 納入制度化升學評量</h4>
+                        <p>陳豐惠執行長：「不考試就被認為不重要，地位永遠跟不上。」</p>
+                    </div>
+                    <div class="policy-card" onclick="togglePolicy(this, 'benefit')">
+                        <h4>B. 具備台語能力納入公務員加薪</h4>
+                        <p>許慧如教授：應從制度面提升學習與應用的實質獲益誘因。</p>
+                    </div>
+                    <div class="policy-card" onclick="togglePolicy(this, 'integration')">
+                        <h4>C. 建立老青代際融合培訓體系</h4>
+                        <p>許宸豪創辦人：整併老一輩的優秀聽說與年輕人的讀寫專長。</p>
+                    </div>
+                </div>
+
+                <div class="policy-feedback">
+                    <h3>政策缺口補足預測指標</h3>
+                    <div class="metric-group">
+                        <label>學習實質誘因提升度</label>
+                        <div class="progress-bar"><div id="bar-incentive" class="progress" style="width: 30%;"></div></div>
+                    </div>
+                    <div class="metric-group">
+                        <label>日常生活中實踐率</label>
+                        <div class="progress-bar"><div id="bar-life" class="progress" style="width: 20%;"></div></div>
+                    </div>
+                    <div class="metric-group">
+                        <label>跨世代傳統文化傳承度</label>
+                        <div class="progress-bar"><div id="bar-heritage" class="progress" style="width: 15%;"></div></div>
+                    </div>
+                    <p id="policy-desc" class="italic-text">點選左側政策，觀看跨領域資源整合的預期動態變化。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>專題文本來源：政大大學報第1825期報導（記者：熊子萱、王翊丞、呂詠倢、林家慶）</p>
+        <p>互動網頁技術：前端融媒體網頁架構展示工程</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
